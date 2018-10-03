@@ -8,10 +8,6 @@ int mian(){
     for(s=ch-'0';isdigit(ch=getchar());s=s*10+ch-'0');
     return s*f;
 }
-/*
-徨工の扮の知は冱えますか
-    その知すら 控に 普てたのは
-*/
 struct node{
     node* fa,*ch[2];
     int sum,val,rev;
