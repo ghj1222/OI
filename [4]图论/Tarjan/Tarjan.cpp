@@ -30,6 +30,7 @@ void search(int x)
 	if (dfn[x] == low[x])
 	{
 		cnt++;
+		s[top + 1] = 0;//注意这句话一定要加，否则可能会出问题
 		while (s[top + 1] != x)
 		{
 			f[s[top]] = cnt;
