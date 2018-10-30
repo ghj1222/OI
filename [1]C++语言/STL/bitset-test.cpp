@@ -1,26 +1,14 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-//尖括号里的数字是大小，必须是常量
-bitset<16> x;//创建一个大小为2333的bitset
-bitset<16> test1(243);//用十进制数
-bitset<16> test2(0xfc);//其实别的进制也行
-bitset<16> test3(string("1010010101"));//甚至字符串也行
-
-int main()
-{
-	cout << test1 << endl;//输出bitset(按位输出)
-	cout << test2 << endl;
-	cout << test3 << endl;
-	cout << x.size() << endl;//大小(16)
-	cout << x.count() << endl;//1个个数 复杂度O(n)
-	cout << x.any() << endl;//是否有1
-	cout << x.none() << endl;//是否没有1
-	x.set(5);//将第5位变为1(从0开始计数)
-	x.set(5, 0);//将第5位变为0
-	x.reset();//清空为0
-	x.reset(5);//将第5位变为0
-	x.flip();//取反
-	x.flip(5);//第5位取反
-	return 0;
-}
+bitset<16> x;//定义一个长度为16的bitset
+bitset<16> y(2333);//用数字定义bitset
+bitset<16> z(string("100101"));//用字符串(从右到左)定义
+x.any(), x.none();//返回是否有1/是否全0
+x.count();//返回1的个数，O(n)
+x.flip();//不加参数全翻转
+x.flip(5);//翻转第5位 返回*this
+x.operator[5];//返回第5位的左值
+x.set();//全设为1 以下均返回*this
+x.set(5);//第5位设为1
+x.set(5, 0);//第5位设为0
+x.reset();//全设为0
+x.reset(5);//第5位设为0
+x.size();//返回大小
